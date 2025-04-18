@@ -252,18 +252,18 @@ export const quizQuestions: Question[] = [
 export const resultMessages = [
   {
     minScore: 0,
-    maxScore: 2,
+    maxScore: 5,
     title: "Apprenti écologiste 🌱",
     message: "Tu débutes dans ton parcours écologique ! Continue d'apprendre et d'adopter de nouvelles habitudes pour protéger notre planète."
   },
   {
-    minScore: 3,
-    maxScore: 5,
+    minScore: 5,
+    maxScore: 15,
     title: "Éco-citoyen en herbe 🌿",
     message: "Tu as de bonnes bases en écologie ! Continue sur cette lancée pour avoir un impact encore plus positif sur l'environnement."
   },
   {
-    minScore: 6,
+    minScore: 15,
     maxScore: 20,
     title: "Champion de l'écologie 🌍",
     message: "Félicitations ! Tu maîtrises les principes fondamentaux de l'écologie et tu as toutes les clés pour agir efficacement au quotidien. Continue à partager ton savoir !"

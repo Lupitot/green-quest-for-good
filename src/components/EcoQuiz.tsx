@@ -85,33 +85,6 @@ const EcoQuiz = () => {
     return resultMessages[0];
   };
 
-  const shareResults = () => {
-    const result = getResultMessage();
-    const text = `J'ai obtenu "${result.title}" au quiz IA for Good ! Je connais ${score}/${quizQuestions.length} astuces pour réduire mon impact écologique. Fais le test toi aussi !`;
-    
-    if (navigator.share) {
-      navigator.share({
-        title: 'IA for Good - Quiz Écologique',
-        text: text,
-        url: window.location.href
-      }).catch(err => {
-        console.error('Erreur lors du partage:', err);
-      });
-    } else {
-      navigator.clipboard.writeText(text)
-        .then(() => {
-          toast({
-            title: "Résultat copié !",
-            description: "Le texte a été copié dans le presse-papier. Partage-le sur tes réseaux !",
-            duration: 3000
-          });
-        })
-        .catch(err => {
-          console.error('Impossible de copier:', err);
-        });
-    }
-  };
-
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-12 relative overflow-hidden">
       {/* Background decorations */}
@@ -136,7 +109,7 @@ const EcoQuiz = () => {
                   Teste tes connaissances en écologie et découvre comment contribuer à un avenir plus durable !
                 </p>
                 <p className="text-sm text-muted-foreground mb-8">
-                  7 questions pour mesurer ton impact et apprendre des gestes concrets.
+                  20 questions pour mesurer ton impact et apprendre des gestes concrets.
                 </p>
               </div>
               
@@ -235,13 +208,6 @@ const EcoQuiz = () => {
                   Rejouer
                 </Button>
                 
-                <Button 
-                  className="flex-1 gap-2 bg-eco-blue hover:bg-eco-blue-light text-white"
-                  onClick={shareResults}
-                >
-                  <Share2 className="h-4 w-4" />
-                  Partager mon résultat
-                </Button>
               </div>
             </div>
           </Card>
